@@ -1,11 +1,10 @@
-import os
 from typing import List, Union
 
 from pydantic import BaseSettings, validator, AnyHttpUrl
 
 
 class Settings(BaseSettings):
-    DEBUG: bool = bool(os.environ.get('DEBUG', False))
+    DEBUG: bool = False
     DATABASE_URL: str = "sqlite+aiosqlite:///./test.db"
 
     PROJECT_NAME: str = 'app'
